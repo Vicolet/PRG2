@@ -1,3 +1,4 @@
+Substitutions
 En supposant les <?> du code ci-dessous remplacés par le code de format adéquat, indiquer ce
 que va afficher le programme suivant ?
 

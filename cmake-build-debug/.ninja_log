@@ -1,0 +1,4 @@
+# ninja log v5
+2	148	6998154572081207	build.ninja	bf2652de4018dfe1
+0	58	6998154573308278	CMakeFiles/PRG2.dir/BScode.cpp.obj	b60d24a15e53be9f
+59	138	6998154574069649	PRG2.exe	b83e7efa8071fa5f
