@@ -1,0 +1,11 @@
+Fixer la valeur du nième bit
+
+Sans faire usage de l'instruction if et en utilisant exclusivement des opérateurs de
+manipulation de bits, implémenter la fonction dont le prototype et la sémantique sont
+donnés ci-dessous.
+
+int* setBit(unsigned shortpos, unsigned shortbitValue, int* n);
+
+Sémantique
+Met le bit en position pos dans la représentation binaire du nombre nà la valeur
+bitValueNB pos = 0 correspond à la position du bit de poids le plus faible
