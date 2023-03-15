@@ -51,13 +51,7 @@ build cmake_object_order_depends_target_PRG2: phony || CMakeFiles/PRG2.dir
 
 build CMakeFiles/PRG2.dir/BScode.cpp.obj: CXX_COMPILER__PRG2_Debug C$:/Users/victo/OneDrive/HEIG-VD/2022-2023/PRG2/BScode.cpp || cmake_object_order_depends_target_PRG2
   DEP_FILE = CMakeFiles\PRG2.dir\BScode.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu++14
-  OBJECT_DIR = CMakeFiles\PRG2.dir
-  OBJECT_FILE_DIR = CMakeFiles\PRG2.dir
-
-build CMakeFiles/PRG2.dir/Nicolet_Victor.c.obj: C_COMPILER__PRG2_Debug C$:/Users/victo/OneDrive/HEIG-VD/2022-2023/PRG2/Nicolet_Victor.c || cmake_object_order_depends_target_PRG2
-  DEP_FILE = CMakeFiles\PRG2.dir\Nicolet_Victor.c.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\PRG2.dir
   OBJECT_FILE_DIR = CMakeFiles\PRG2.dir
 
@@ -69,7 +63,7 @@ build CMakeFiles/PRG2.dir/Nicolet_Victor.c.obj: C_COMPILER__PRG2_Debug C$:/Users
 #############################################
 # Link the executable PRG2.exe
 
-build PRG2.exe: CXX_EXECUTABLE_LINKER__PRG2_Debug CMakeFiles/PRG2.dir/BScode.cpp.obj CMakeFiles/PRG2.dir/Nicolet_Victor.c.obj
+build PRG2.exe: CXX_EXECUTABLE_LINKER__PRG2_Debug CMakeFiles/PRG2.dir/BScode.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\PRG2.dir
