@@ -1,0 +1,24 @@
+printf (2)
+
+Soit le squelette de code suivant :
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+ int n = 255;
+ double x = 12.345;
+ < à compléter>
+
+ return EXIT_SUCCESS;
+}
+
+Compléter le code ci-dessus de sorte qu'à l'exécution il reproduise à l'identique l'output
+suivant :
+
+0377
+FF
++###255
+1.235e+01
+12.345
+12.3450
