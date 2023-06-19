@@ -210,7 +210,7 @@ tableau d'aide :
 5) 20
 6) 11
 7) 20
-8) 1 
+8) 1
 
 ## Exercice 2.8 Arithmétique des pointeurs (2)
 
@@ -238,7 +238,7 @@ int main(void) {
 }
 ```
 
-## Solutions : 
+## Solutions :
 
 ```c
 0 1 2 3 4 5 
@@ -270,6 +270,7 @@ i) e[0][0][e-d]+1
 j) 0[c][0] - 'd' + 'B'
 
 **Remarques**
+
 - Pour les chaînes de caractères (char *), donner le résultat entre guillemets. Ex : "ABC".
 - Pour les caractères (char), donner la représentation littérale. Ex : ‘a’.
 
@@ -285,7 +286,6 @@ g) 'r'
 h) 'e'
 i) code ASCII de 'n' // car 'm' + 1 = 'n'
 j) code ASCII de 'C' // car tab[i] = i[tab]
-
 
 ## Exercice 2.10 Arithmétique des pointeurs (4)
 
@@ -318,7 +318,6 @@ int main(void) {
 
 ```comme c'est simple```
 
-
 ## Exercice 2.11 Formalisme pointeur et tableaux 1D
 
 Écrire d'au moins 6 manières différentes, mais toujours en utilisant le formalisme pointeur,
@@ -327,7 +326,7 @@ donnée (de type int), tous les éléments d'un tableau à 1 dimension (1D) de t
 composé d'entiers (de type int).
 
 ## Solutions :
- 
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -401,12 +400,13 @@ Implémenter la fonction C dont le prototype et la sémantique sont donnés ci-d
  void inverser(int* debut, int* fin);
 
  ```
+
 **Sémantique**
 Inverse le contenu du tableau 1D défini par _début_ et _fin_ où début, resp. _fin_, désigne l'adresse
 du premier, resp. du dernier, élément du tableau à inverser.
 
 ## Solutions :
- 
+
 ```c
 void inverser(int *debut, int *fin) {
     assert(debut != NULL);
@@ -420,6 +420,7 @@ void inverser(int *debut, int *fin) {
 ```
 
 ## Exercice 2.13 Méli-mélo
+
 Que va afficher le programme main ci-dessous ?
 _(On suppose travailler ici avec une architecture 32 bits)_
 
@@ -442,7 +443,8 @@ int main(void) {
 }
 ```
 
-## Solutions : 
+## Solutions :
+
 ```*p = 4 *q = 3```
 
 ## Exercice 2.14 Pointeurs, tableaux et fonctions
@@ -484,7 +486,6 @@ void f(int *p1, int p2) {
 
 ## Solutions :
 
-
 ## Exercice 2.15 Utilisation de calloc
 
 Ecrire une fonction C initialiser permettant 1°) de créer un tableau (à 1 dimension) de taille
@@ -494,35 +495,38 @@ les éléments de ce tableau.
 #### **IMPORTANT**
 
 La fonction :
+
 - ne doit comporter que 2 paramètres : le premier fixant la taille (le nombre d'éléments) du
-tableau à créer, le second fixant la valeur à donner à tous les éléments du tableau
+  tableau à créer, le second fixant la valeur à donner à tous les éléments du tableau
 - doit utiliser les services de la fonction calloc
-Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
-fonction.
+  Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
+  fonction.
 
 ## Solutions :
 
-
 ## Exercice 2.16 Inversion d'un tableau 1D (2)
+
 Implémenter la fonction C dont le prototype et la sémantique sont donnés ci-dessous :
+
 ```c
 int* inverse(const int* debut, const int* fin);
 ```
+
 **Sémantique**
 Renvoie le tableau inverse du tableau 1D défini par début et fin où début, resp. fin, désigne
 l'adresse du premier, resp. du dernier, élément du tableau à inverser.
 
 ## Solutions :
 
-
 ## Exercice 2.17 Adresses du min et du max d'un tableau 1D
+
 Ecrire une fonction C qui prend en paramètre un tableau tab 1D de int de taille quelconque et
 qui renvoie en valeur de retour les adresses du plus petit élément et du plus grand élément1 de
 tab _(ou NULL si tab vaut NULL ou si tab est vide)_.
-Dans le cas où il y aurait plusieurs plus petits éléments on renverra l'adresse de celui dont l'indice dans tab est le plus petit (idem dans le cas du plus grand élément).
+Dans le cas où il y aurait plusieurs plus petits éléments on renverra l'adresse de celui dont l'indice dans tab est le
+plus petit (idem dans le cas du plus grand élément).
 
 ## Solutions :
-
 
 ## Exercice 2.18 Manipulation de la mémoire (1)
 
@@ -533,14 +537,15 @@ Ecrire un programme C qui :
 3) affiche tab1 et tab2
 4) se termine
 
- NB Prévoir une fonction dédiée à l'affichage d'un tableau sous la forme [valeur1, valeur2,…]. 
- Écrire cette fonction en utilisant exclusivement le formalisme pointeur.
+NB Prévoir une fonction dédiée à l'affichage d'un tableau sous la forme [valeur1, valeur2,…].
+Écrire cette fonction en utilisant exclusivement le formalisme pointeur.
 
 ## Solutions :
 
-
 ## Exercice 2.19 Manipulation de la mémoire (2)
-Sans utiliser de boucle, compléter la partie notée <à compléter> dans le programme C cidessous de telle sorte que celui-ci affiche à l'exécution :
+
+Sans utiliser de boucle, compléter la partie notée <à compléter> dans le programme C cidessous de telle sorte que
+celui-ci affiche à l'exécution :
 [0, 0, 0]
 [1, 1, 1]
 [2, 2, 2]
@@ -573,7 +578,6 @@ int main(void) {
 
 ## Solutions :
 
-
 ## Exercice 2.20 Manipulation de la mémoire (3)
 
 Que va afficher à l'exécution le programme C suivant ?
@@ -593,15 +597,15 @@ int main(void) {
 
 ## Solutions :
 
-
 ## Exercice 2.21 Initialisation d'une matrice
+
 Écrire une fonction C sans valeur de retour (void) qui initialise une matrice m x n de int avec
 des 1 sur les 4 "bords" et des 0 partout ailleurs.
 Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
 fonction.
 
-
 ## Exercice 2.22 Somme des valeurs d'une matrice
+
 Écrire une fonction C qui renvoie la somme des coefficients de la matrice m x n de double
 passée en paramètre.
 Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
@@ -621,24 +625,19 @@ M =
 5 6 7.5 8
 1 2.5 3 4
 
-
 ## Exercice 2.23 Diagonale d'une matrice carrée
+
 Ecrire une fonction C qui prend en paramètre une matrice n x n de int et qui renvoie en valeur
 de retour le vecteur correspondant aux éléments de la diagonale gauche de ladite matrice.
 Exemple : Si matrice =
 
+$$\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{pmatrix}$$
 
-$\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{pmatrix}$
+La fonction doit renvoyer le vecteur :
 
+$$\begin{pmatrix} 1 \\ 5 \\ 9 \end{pmatrix}$$
 
-la fonction doit renvoyer le vecteur 
-
-
-$$\begin{pmatrix} 1 & 5 & 9 \end{pmatrix}$$
-
-
-$$V_{sphere} = \frac{4}{3}\pi r^3$$
-Ecrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
+Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
 fonction.
 
 
