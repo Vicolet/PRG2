@@ -604,6 +604,8 @@ des 1 sur les 4 "bords" et des 0 partout ailleurs.
 Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
 fonction.
 
+## Solutions :
+
 ## Exercice 2.22 Somme des valeurs d'une matrice
 
 Écrire une fonction C qui renvoie la somme des coefficients de la matrice m x n de double
@@ -617,6 +619,8 @@ $$M =
 5 & 6 & 7.5 & 8\\
 9.5 & 10 & 11 & 12
 \end{pmatrix}$$
+
+## Solutions :
 
 ## Exercice 2.23 Diagonale d'une matrice carrée
 
@@ -641,42 +645,16 @@ $$\begin{pmatrix}
 Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
 fonction.
 
+## Solutions :
 
+## Exercice 2.24 Calcul d'une intégrale
 
+Écrire une fonction C permettant d'intégrer, par la méthode des trapèzes, n'importe quelle
+fonction f(x) (x de type double) entre deux bornes A et B (également de type double). Le
+nombre de pas d'intégration est aussi un paramètre de la fonction d'intégration.
 
+Tester votre fonction d'intégration en écrivant un petit programme permettant de calculer :
 
+$$\[ \int_{0}^{\infty} e^-x^2 \,dx \] (= \sqrt{\pi}/2 = 0.886227)$$
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$$\[ \int_{0}^{\pi/2} sin(x) \,dx \] (= 1)$$
