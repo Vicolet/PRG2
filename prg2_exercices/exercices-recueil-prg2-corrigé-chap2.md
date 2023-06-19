@@ -631,11 +631,11 @@ Ecrire une fonction C qui prend en paramètre une matrice n x n de int et qui re
 de retour le vecteur correspondant aux éléments de la diagonale gauche de ladite matrice.
 Exemple : Si matrice =
 
-$$\begin{pmatrix} 1 & 2 & 3\\4 & 5 & 6\\7 & 8 & 9 \end{pmatrix}$$
+$$\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{pmatrix}$$
 
 La fonction doit renvoyer le vecteur :
 
-$$\begin{pmatrix} 1\\5\\9 \end{pmatrix}$$
+$$\begin{pmatrix} 1\\ 5\\ 9 \end{pmatrix}$$
 
 Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
 fonction.
