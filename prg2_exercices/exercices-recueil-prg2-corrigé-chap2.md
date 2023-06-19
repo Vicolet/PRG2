@@ -610,19 +610,28 @@ fonction.
 passée en paramètre.
 Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
 fonction sur la matrice 3 x 4 suivante :
-M =
+
+$$M =
+\begin{pmatrix}
+1 & 2.5 & 3 & 4\\
+5 & 6 & 7.5 & 8\\
+9.5 & 10 & 11 & 12
+\end{pmatrix}$$
 
 ## Exercice 2.23 Diagonale d'une matrice carrée
 
 Ecrire une fonction C qui prend en paramètre une matrice n x n de int et qui renvoie en valeur
 de retour le vecteur correspondant aux éléments de la diagonale gauche de ladite matrice.
 Exemple : Si matrice =
+
 $$\begin{pmatrix} 
 1 & 2 & 3\\ 
 4 & 5 & 6\\ 
 7 & 8 & 9 
 \end{pmatrix}$$
+
 La fonction doit renvoyer le vecteur :
+
 $$\begin{pmatrix} 
 1\\ 
 5\\ 
