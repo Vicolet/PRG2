@@ -19,19 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d686d954-67b4-4a7d-9791-747d8bb50e61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-10.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-11.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-12.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-13.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-5.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-6.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-7.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-8.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercices/exercices-recueil-prg2-corrigé/exo-1-9.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-part1.md" beforeDir="false" afterPath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-part1.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,9 +88,9 @@
       </texify-bibtex>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="EXTERNAL_TOOL_RUN_CONFIGURATION" factoryName="LaTeX configuration factory">
@@ -164,7 +153,8 @@
       <workItem from="1682626671326" duration="107000" />
       <workItem from="1686937873033" duration="13000" />
       <workItem from="1686937889610" duration="1395000" />
-      <workItem from="1687013488026" duration="5389000" />
+      <workItem from="1687013488026" duration="7932000" />
+      <workItem from="1687158928148" duration="4779000" />
     </task>
     <servers />
   </component>
