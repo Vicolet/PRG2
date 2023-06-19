@@ -18,9 +18,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d686d954-67b4-4a7d-9791-747d8bb50e61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-chap2.md" beforeDir="false" afterPath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-chap2.md" afterDir="false" />
-    </list>
+    <list default="true" id="d686d954-67b4-4a7d-9791-747d8bb50e61" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +147,7 @@
       <workItem from="1686937889610" duration="1395000" />
       <workItem from="1687013488026" duration="7932000" />
       <workItem from="1687158928148" duration="16187000" />
-      <workItem from="1687198541633" duration="1302000" />
+      <workItem from="1687198541633" duration="1623000" />
     </task>
     <servers />
   </component>
