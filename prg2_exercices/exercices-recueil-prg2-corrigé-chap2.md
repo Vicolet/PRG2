@@ -445,3 +445,230 @@ int main(void) {
 ## Solutions : 
 ```*p = 4 *q = 3```
 
+## Exercice 2.14 Pointeurs, tableaux et fonctions
+
+Que va afficher le programme main ci-dessous ?
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+void f(int *p1, int p2);
+
+int main(void) {
+    int a = 5, b = 6;
+    int t[2] = {3, 4};
+    int *p = NULL, *q = NULL;
+
+    f(&a, b);
+    printf("1) %d, %d\n", a, b);
+
+    p = &a;
+    q = &b;
+    f(q, *p);
+    printf("2) %d, %d\n", *p, *q);
+
+    f(t + 1, *t);
+    printf("3) %d, %d\n", t[0], t[1]);
+
+    f((int *) (&p), b);
+    printf("4) %d, %d\n", a, b);
+
+    return EXIT_SUCCESS;
+}
+
+void f(int *p1, int p2) {
+    *p1 = 2 * p2;
+}
+```
+
+## Solutions :
+
+
+## Exercice 2.15 Utilisation de calloc
+
+Ecrire une fonction C initialiser permettant 1°) de créer un tableau (à 1 dimension) de taille
+donnée, composé d'entiers (de type int), 2°) d'initialiser à une valeur donnée (de type int) tous
+les éléments de ce tableau.
+
+#### **IMPORTANT**
+
+La fonction :
+- ne doit comporter que 2 paramètres : le premier fixant la taille (le nombre d'éléments) du
+tableau à créer, le second fixant la valeur à donner à tous les éléments du tableau
+- doit utiliser les services de la fonction calloc
+Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
+fonction.
+
+## Solutions :
+
+
+## Exercice 2.16 Inversion d'un tableau 1D (2)
+Implémenter la fonction C dont le prototype et la sémantique sont donnés ci-dessous :
+```c
+int* inverse(const int* debut, const int* fin);
+```
+**Sémantique**
+Renvoie le tableau inverse du tableau 1D défini par début et fin où début, resp. fin, désigne
+l'adresse du premier, resp. du dernier, élément du tableau à inverser.
+
+## Solutions :
+
+
+## Exercice 2.17 Adresses du min et du max d'un tableau 1D
+Ecrire une fonction C qui prend en paramètre un tableau tab 1D de int de taille quelconque et
+qui renvoie en valeur de retour les adresses du plus petit élément et du plus grand élément1 de
+tab _(ou NULL si tab vaut NULL ou si tab est vide)_.
+Dans le cas où il y aurait plusieurs plus petits éléments on renverra l'adresse de celui dont l'indice dans tab est le plus petit (idem dans le cas du plus grand élément).
+
+## Solutions :
+
+
+## Exercice 2.18 Manipulation de la mémoire (1)
+
+Ecrire un programme C qui :
+
+1) déclare et initialise un tableau tab1 à une dimension de int
+2) copie (sans utiliser de boucle) le contenu de tab1 dans un autre tableau tab2
+3) affiche tab1 et tab2
+4) se termine
+
+ NB Prévoir une fonction dédiée à l'affichage d'un tableau sous la forme [valeur1, valeur2,…]. 
+ Écrire cette fonction en utilisant exclusivement le formalisme pointeur.
+
+## Solutions :
+
+
+## Exercice 2.19 Manipulation de la mémoire (2)
+Sans utiliser de boucle, compléter la partie notée <à compléter> dans le programme C cidessous de telle sorte que celui-ci affiche à l'exécution :
+[0, 0, 0]
+[1, 1, 1]
+[2, 2, 2]
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define SIZE 3
+
+void afficher … // Le code de la fonction afficher a volontairement été omis ici
+
+int main(void) {
+
+    int tab[SIZE] = {0};
+    afficher(tab, SIZE);
+    for (size_t i = 0; i < SIZE; ++i)
+        tab[i]++;
+    afficher(tab, SIZE);
+    //<à compléter>
+
+    for (size_t i = 0; i < SIZE; ++i)
+        tab[i] += 2;
+    afficher(tab, SIZE);
+
+    return EXIT_SUCCESS;
+}
+```
+
+## Solutions :
+
+
+## Exercice 2.20 Manipulation de la mémoire (3)
+
+Que va afficher à l'exécution le programme C suivant ?
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+    char str[] = "memmove est tres utile......";
+    memmove(str + 17, str + 12, 10);
+    printf("%s\n", str);
+    return EXIT_SUCCESS;
+}
+```
+
+## Solutions :
+
+
+## Exercice 2.21 Initialisation d'une matrice
+Écrire une fonction C sans valeur de retour (void) qui initialise une matrice m x n de int avec
+des 1 sur les 4 "bords" et des 0 partout ailleurs.
+Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
+fonction.
+
+
+## Exercice 2.22 Somme des valeurs d'une matrice
+Écrire une fonction C qui renvoie la somme des coefficients de la matrice m x n de double
+passée en paramètre.
+Écrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
+fonction sur la matrice 3 x 4 suivante :
+M =
+
+
+
+
+
+
+
+
+
+
+9.5 10 11 12
+5 6 7.5 8
+1 2.5 3 4
+
+
+## Exercice 2.23 Diagonale d'une matrice carrée
+Ecrire une fonction C qui prend en paramètre une matrice n x n de int et qui renvoie en valeur
+de retour le vecteur correspondant aux éléments de la diagonale gauche de ladite matrice.
+Exemple : Si matrice = $$\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{pmatrix}$$
+
+la fonction doit renvoyer le vecteur $$\begin{pmatrix} 1 & 5 & 9 \end{pmatrix}$$
+
+$$V_{sphere} = \frac{4}{3}\pi r^3$$
+Ecrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
+fonction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
