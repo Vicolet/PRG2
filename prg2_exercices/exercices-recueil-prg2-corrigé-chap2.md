@@ -655,6 +655,6 @@ nombre de pas d'intégration est aussi un paramètre de la fonction d'intégrati
 
 Tester votre fonction d'intégration en écrivant un petit programme permettant de calculer :
 
-$$\[ \int_{0}^{\infty} e^-x^2 \,dx \] (= \sqrt{\pi}/2 = 0.886227)$$
+$$\ \int_{0}^{\infty} e^(-x^2) \,dx \  ( = \sqrt{\pi}/2 = 0.886227)$$
 
-$$\[ \int_{0}^{\pi/2} sin(x) \,dx \] (= 1)$$
+$$\ \int_{0}^{\pi/2} sin(x) \,dx \  ( = 1)$$
