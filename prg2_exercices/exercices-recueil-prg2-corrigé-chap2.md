@@ -625,9 +625,11 @@ M =
 ## Exercice 2.23 Diagonale d'une matrice carrée
 Ecrire une fonction C qui prend en paramètre une matrice n x n de int et qui renvoie en valeur
 de retour le vecteur correspondant aux éléments de la diagonale gauche de ladite matrice.
-Exemple : Si matrice = $$\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{pmatrix}$$
+Exemple : Si matrice = 
+$\begin{pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end{pmatrix}$
 
-la fonction doit renvoyer le vecteur $$\begin{pmatrix} 1 & 5 & 9 \end{pmatrix}$$
+la fonction doit renvoyer le vecteur 
+$$\begin{pmatrix} 1 & 5 & 9 \end{pmatrix}$$
 
 $$V_{sphere} = \frac{4}{3}\pi r^3$$
 Ecrire aussi un petit programme de test permettant de vérifier le bon fonctionnement de votre
