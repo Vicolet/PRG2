@@ -258,16 +258,16 @@ const char*** e = &d[3];
 Quelles valeurs fournissent les expressions suivantes ?
 _(Conseil : Aidez-vous d'un petit dessin)_
 
-a) c[3][0]
-b) (**d)[5]
-c) (**e)[*d-c]
-d) (d[3]-3)[0][3]
-e) **d + 5
-f) *d[3] + 2
-g) *(*e[-3] + 5)
-h) **c
-i) e[0][0][e-d]+1
-j) 0[c][0] - 'd' + 'B'
+1. ```c[3][0]```
+2. ```(**d)[5]```
+3. ```(**e)[*d-c]```
+4. ```(d[3]-3)[0][3]```
+5. ```**d + 5```
+6. ```*d[3] + 2```
+7. ```*(*e[-3] + 5)```
+8. ```**c```
+9. ```e[0][0][e-d]+1```
+10. ```0[c][0] - 'd' + 'B'```
 
 **Remarques**
 
@@ -276,16 +276,16 @@ j) 0[c][0] - 'd' + 'B'
 
 ## Solutions :
 
-a) 'p'
-b) 'r'
-c) 'o'
-d) 'g'
-e) "ra"
-f) "mme"
-g) 'r'
-h) 'e'
-i) code ASCII de 'n' // car 'm' + 1 = 'n'
-j) code ASCII de 'C' // car tab[i] = i[tab]
+1. ```'p'```
+2. ```'r'```
+3. ```'o'```
+4. ```'g'```
+5. ```"ra"```
+6. ```"mme"```
+7. ```'r'```
+8. ```'e'```
+9. ```code ASCII de 'n' // car 'm' + 1 = 'n'```
+10. ```code ASCII de 'C' // car tab[i] = i[tab]```
 
 ## Exercice 2.10 Arithmétique des pointeurs (4)
 
@@ -486,6 +486,12 @@ void f(int *p1, int p2) {
 
 ## Solutions :
 
+1) ```12, 6```
+2) ```12, 24```
+3) ```3, 6```
+4) ```12, 24```
+
+
 ## Exercice 2.15 Utilisation de calloc
 
 Ecrire une fonction C initialiser permettant 1°) de créer un tableau (à 1 dimension) de taille
@@ -504,6 +510,65 @@ La fonction :
 
 ## Solutions :
 
+```c
+#include <assert.h>
+#include <inttypes.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int *initialiser_1(size_t taille, int valeur);
+
+int *initialiser_2(size_t taille, int valeur);
+
+void afficher(const int *ptr, size_t taille);
+
+int main(void) {
+    {
+        const size_t TAILLE = 3;
+        int *p = initialiser_1(TAILLE, 1);
+        afficher(p, TAILLE); // Affiche [1, 1, 1]
+        free(p);
+    }
+    {
+        const size_t TAILLE = 5;
+        int *p = initialiser_2(TAILLE, 2);
+        afficher(p, TAILLE); // Affiche [2, 2, 2, 2, 2]
+        free(p);
+    }
+    return EXIT_SUCCESS;
+}
+
+int *initialiser_1(size_t taille, int valeur) {
+    assert(taille > 0);
+    int *p = (int *) calloc(taille, sizeof(int));
+    if (p)
+        for (int *tmp = p; tmp < p + taille; *tmp++ = valeur);
+    return p;
+}
+
+int *initialiser_2(size_t taille, int valeur) {
+    assert(taille > 0);
+    int *p = (int *) calloc(taille, sizeof(int));
+    if (p) {
+        const int *const FIN = p + taille;
+        for (; p < FIN; *p++ = valeur);
+        p -= taille;
+    }
+    return p;
+}
+
+void afficher(const int *ptr, size_t taille) {
+    assert(ptr != NULL);
+    printf("[");
+    for (size_t i = 0; i < taille; ++i) {
+        if (i > 0)
+            printf("%s", ", ");
+        printf("%d", ptr[i]); // ou *(ptr + i)
+    }
+    printf("]\n");
+}
+```
+
 ## Exercice 2.16 Inversion d'un tableau 1D (2)
 
 Implémenter la fonction C dont le prototype et la sémantique sont donnés ci-dessous :
@@ -517,6 +582,72 @@ Renvoie le tableau inverse du tableau 1D défini par début et fin où début, r
 l'adresse du premier, resp. du dernier, élément du tableau à inverser.
 
 ## Solutions :
+
+```c
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int *inverse(const int *debut, const int *fin);
+
+void afficher(const int tab[], size_t taille);
+
+void test(const int tab[], size_t taille);
+
+int main(void) {
+    {
+        const int TAB[] = {1};
+        test(TAB, sizeof(TAB) / sizeof(int));
+    }
+
+    {
+        const int TAB[] = {1, 2};
+        test(TAB, sizeof(TAB) / sizeof(int));
+    }
+    {
+        const int TAB[] = {1, 2, 3};
+        test(TAB, sizeof(TAB) / sizeof(int));
+    }
+    {
+        const int TAB[] = {1, 2, 3};
+        test(TAB, 0);
+    }
+
+    return EXIT_SUCCESS;
+}
+
+int *inverse(const int *debut, const int *fin) {
+    assert(debut != NULL);
+    assert(fin != NULL);
+    assert(fin - debut + 1 > 0); // pour garantir que (cf ci-dessous) TAILLE > 0
+    const size_t TAILLE = (size_t) (fin - debut + 1);
+    int *ptr = (int *) calloc(TAILLE, sizeof(int));
+    if (ptr)
+        for (size_t i = 0; i < TAILLE; ++i)
+            ptr[TAILLE - 1 - i] = debut[i]; // ou ptr[i] = *fin--;
+    return ptr;
+}
+
+void afficher(const int tab[], size_t taille) {
+    assert(tab != NULL);
+    printf("[");
+    for (size_t i = 0; i < taille; ++i) {
+        if (i > 0)
+            printf("%s", ", ");
+        printf("%d", tab[i]);
+    }
+    printf("]\n");
+}
+
+void test(const int tab[], size_t taille) {
+    printf("Avant inversion : \n");
+    afficher(tab, taille);
+    int *ptr = inverse(tab, tab + taille - 1);
+    printf("Apres inversion : \n");
+    afficher(ptr, taille);
+    free(ptr);
+}
+```
 
 ## Exercice 2.17 Adresses du min et du max d'un tableau 1D
 
@@ -542,6 +673,42 @@ NB Prévoir une fonction dédiée à l'affichage d'un tableau sous la forme [val
 
 ## Solutions :
 
+```c
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void afficher(const int *adr, size_t n);
+
+int main(void) {
+
+    int tab1[] = {1, 2, 3};
+    const size_t SIZE = sizeof(tab1) / sizeof(int);
+
+    afficher(tab1, SIZE);
+    int *tab2 = (int *) calloc(SIZE, sizeof(int));
+    if (tab2) {
+        memcpy(tab2, tab1, sizeof(tab1));
+        afficher(tab2, SIZE);
+        free(tab2);
+    }
+
+    return EXIT_SUCCESS;
+}
+
+void afficher(const int *adr, size_t n) {
+    assert(adr != NULL);
+    printf("[");
+    for (size_t i = 0; i < n; ++i) {
+        if (i > 0)
+            printf(", ");
+        printf("%d", *(adr + i));
+    }
+    printf("]\n");
+}
+```
+
 ## Exercice 2.19 Manipulation de la mémoire (2)
 
 Sans utiliser de boucle, compléter la partie notée <à compléter> dans le programme C cidessous de telle sorte que
@@ -566,7 +733,7 @@ int main(void) {
     for (size_t i = 0; i < SIZE; ++i)
         tab[i]++;
     afficher(tab, SIZE);
-    //<à compléter>
+    <à compléter>
 
     for (size_t i = 0; i < SIZE; ++i)
         tab[i] += 2;
@@ -597,6 +764,8 @@ int main(void) {
 
 ## Solutions :
 
+```memmove est tres tres utile.```
+
 ## Exercice 2.21 Initialisation d'une matrice
 
 Écrire une fonction C sans valeur de retour (void) qui initialise une matrice m x n de int avec
@@ -605,6 +774,114 @@ des 1 sur les 4 "bords" et des 0 partout ailleurs.
 fonction.
 
 ## Solutions :
+
+```c
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef unsigned short ushort;
+
+void initialiser_1(int *adr, size_t m, size_t n);
+
+void initialiser_2(int *adr, size_t m, size_t n);
+
+void initialiser_3(int *adr, size_t m, size_t n);
+
+void afficher(const int *adr, size_t m, size_t n);
+
+int main(void) {
+    int t1[3][3];
+    int t2[3][3];
+    int t3[3][3];
+    int t4[3][4];
+    int t5[3][4];
+    int t6[3][4];
+    initialiser_1((int *) t1, 3, 3); // ou t1[0] ou &t1[0][0]
+    initialiser_2((int *) t2, 3, 3);
+    initialiser_3((int *) t3, 3, 3);
+    initialiser_1((int *) t4, 3, 4);
+    initialiser_2((int *) t5, 3, 4);
+    initialiser_3((int *) t6, 3, 4);
+    afficher((int *) t1, 3, 3);
+    afficher((int *) t2, 3, 3);
+    afficher((int *) t3, 3, 3);
+
+    afficher((int *) t4, 3, 4);
+    afficher((int *) t5, 3, 4);
+    afficher((int *) t6, 3, 4);
+
+    return EXIT_SUCCESS;
+}
+
+void initialiser_1(int *adr, size_t m, size_t n) { // Approche peu efficace
+    assert(adr != NULL);
+    assert(m > 0);
+    assert(n > 0);
+    for (size_t i = 0; i < m; ++i)
+        for (size_t j = 0; j < n; ++j)
+            *adr++ = i == 0 || i == m - 1 || j == 0 || j == n - 1;
+    // Autres variantes possibles :
+    // *(adr + i * n + j) = i == 0 || i == m - 1 || j == 0 || j == n - 1;
+    // adr[i * n + j] = i == 0 || i == m - 1 || j == 0 || j == n - 1;
+}
+
+void initialiser_2(int *adr, size_t m, size_t n) { // Approche plus efficace
+    assert(adr != NULL);
+    assert(m > 0);
+    assert(n > 0);
+    // Mettre tous les éléments à 0
+    memset(adr, 0, m * n * sizeof(int));
+    // Mettre les "bords" sup et inf à 1
+    for (size_t j = 0; j < n; ++j)
+        adr[j] = adr[n * (m - 1) + j] = 1;
+    // Mettre les "bords" gauche et droit à 1
+    for (size_t i = 1; i < n - 1; ++i)
+        adr[n * i] = adr[n * i + n - 1] = 1;
+}
+
+// L'avantage de l'approche ci-dessous est de pouvoir réutiliser [i][j]
+void initialiser_3(int *adr, size_t m, size_t n) {
+    assert(adr != NULL);
+    assert(m > 0);
+    assert(n > 0);
+    // tableau de pointeurs sur les lignes de la matrice
+    int **ad = (int **) calloc(m, sizeof(int *));
+    assert(ad != NULL);
+    for (size_t i = 0; i < m; ++i)
+        ad[i] = &adr[i * n]; // ou adr + i * n car rappel :
+    // *(adr + i * n) = adr[i * n]
+// => &adr[i * n] = adr + i * n
+    // Mettre tous les éléments à 0
+    memset(adr, 0, m * n * sizeof(int));
+    // Mettre les "bords" sup et inf à 1
+    for (size_t j = 0; j < n; ++j)
+        ad[0][j] = ad[m - 1][j] = 1;
+    // Mettre les "bords" gauche et droit à 1
+    for (size_t i = 1; i < m - 1; ++i)
+        ad[i][0] = ad[i][n - 1] = 1;
+    // Restituer la mémoire allouée dynamiquement
+    free(ad);
+}
+
+void afficher(const int *adr, size_t m, size_t n) {
+    assert(adr != NULL);
+    printf("[");
+    for (size_t i = 0; i < m; ++i) {
+        if (i > 0)
+            printf("%s", ", ");
+        printf("[");
+        for (size_t j = 0; j < n; ++j) {
+            if (j > 0)
+                printf("%s", ", ");
+            printf("%d", *adr++);
+        }
+        printf("]");
+    }
+    printf("]\n");
+} 
+```
 
 ## Exercice 2.22 Somme des valeurs d'une matrice
 
