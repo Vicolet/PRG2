@@ -19,8 +19,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d686d954-67b4-4a7d-9791-747d8bb50e61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/prg2_labo/PRG2_LABO_2" beforeDir="false" afterPath="$PROJECT_DIR$/prg2_labo/PRG2_LABO_2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prg2_labo/PRG2_LABO_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/prg2_labo/PRG2_LABO_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-RRH/Corrigé exs 4.2 à 4.5 et 4.9.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-chap4.md" beforeDir="false" afterPath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-chap4.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-chap5.md" beforeDir="false" afterPath="$PROJECT_DIR$/prg2_exercices/exercices-recueil-prg2-corrigé-chap5.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,6 +156,8 @@
       <workItem from="1687198541633" duration="2615000" />
       <workItem from="1687244708279" duration="4011000" />
       <workItem from="1687252756579" duration="9176000" />
+      <workItem from="1687340730611" duration="4087000" />
+      <workItem from="1687349747343" duration="4312000" />
     </task>
     <servers />
   </component>
